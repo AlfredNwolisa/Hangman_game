@@ -1,69 +1,16 @@
 import random
+import hangman_words
+import hangman_art
 
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-
-word_list = ["aardvark", "baboon", "camel"]
+word_list = hangman_words.word_list
 chosen_word = random.choice(word_list)
 word_length = len(chosen_word)
 
 lives = 6
 #Testing code
 #print(f'Pssst, the solution is {chosen_word}.')
+
+print(hangman_art.logo)
 
 #Create blanks
 display = []
@@ -89,4 +36,4 @@ while "_" not in display:
     print(f"You've won fam! The word is {chosen_word}!.")
     break
 
-print(stages[lives])
+print(hangman_art.stages[lives])
